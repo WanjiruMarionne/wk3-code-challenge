@@ -95,9 +95,10 @@ class TestCustomer:
         Review(customer, restaurant, 2)
         Review(customer, restaurant_2, 5)
 
-        # assert restaurant in customer.restaurants()
-        # assert restaurant_2 in customer.restaurants()
-        # assert restaurant_3 not in customer.restaurants()
+        assert restaurant in customer.restaurants()
+        assert restaurant_2 in customer.restaurants()
+        assert restaurant_3 not in customer.restaurants()
+        ###
 
     def test_restaurants_of_type_restaurant(self):
         """restaurants must of type Restaurant"""
@@ -108,8 +109,8 @@ class TestCustomer:
         Review(customer, restaurant_1, 2)
         Review(customer, restaurant_2, 5)
 
-        # assert isinstance(customer.restaurants()[0], Restaurant)
-        # assert isinstance(customer.restaurants()[1], Restaurant)
+        assert isinstance(customer.restaurants()[0], Restaurant)
+        assert isinstance(customer.restaurants()[1], Restaurant)
 
     def test_restaurants_unique(self):
         """customer restaurants are unique"""
@@ -121,10 +122,10 @@ class TestCustomer:
         Review(customer, restaurant_2, 5)
         Review(customer, restaurant_2, 3)
 
-        # assert len(set(customer.restaurants())) == len(customer.restaurants())
-        # assert len(customer.restaurants()) == 2
-        # assert restaurant_1 in customer.restaurants()
-        # assert restaurant_2 in customer.restaurants()
+        assert len(set(customer.restaurants())) == len(customer.restaurants())
+        assert len(customer.restaurants()) == 2
+        assert restaurant_1 in customer.restaurants()
+        assert restaurant_2 in customer.restaurants()
 
     def test_num_negative_reviews(self):
         """returns the total number of negative reviews by that customer"""
